@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-12">
             {/* Logo */}
             <Link href="/#home" className="text-xl font-bold font-heading">
-              Tasmind AI
+              TaskMind AI
             </Link>
 
             {/* Desktop Navigation */}
