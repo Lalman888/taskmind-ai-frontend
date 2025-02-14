@@ -5,20 +5,23 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
-import { COMPANIES, PROCESS, REVIEWS } from "@/constants/misc";
+import { PROCESS } from "@/constants/misc";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import * as LucideIcons from "lucide-react";
 // import PricingCards from "@/components/pricing-cards";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+// import {
+//   Card,
+//   CardContent,
+//   CardDescription,
+//   CardFooter,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card";
 import { LampContainer } from "@/components/ui/lamp";
+import { WaitlistForm } from "@/components/waitlist-form";
+import Join from "@/components/join-waitlist-button";
+import EarlyButton from "@/components/early-button";
 
 export default function Home() {
   return (
@@ -28,7 +31,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background pb-24">
           <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
             {/* Enhanced AI Tagline with Gradient Motion */}
-            <Button
+            {/* <Button
               variant="ghost"
               className="group relative mb-8 h-11 rounded-full border border-primary/20 bg-background px-6 shadow-lg transition-all hover:scale-105 hover:border-primary/30"
             >
@@ -40,8 +43,15 @@ export default function Home() {
                 Intelligent Automation Platform
                 <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
-            </Button>
-
+              
+            </Button> */}
+            {/* Add this above the main heading */}
+            <div className="mb-4">
+              <span className="inline-flex items-center rounded-full bg-primary/15 px-4 py-2 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
+                <LucideIcons.Clock className="w-4 h-4 mr-2" />
+                Launching Soon - Early Access Available
+              </span>
+            </div>
             {/* Dynamic Hero Heading */}
             <h1 className="text-foreground py-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] font-heading">
               Transform Workflows with
@@ -61,22 +71,22 @@ export default function Home() {
               </span>
             </p>
 
-            {/* Enhanced CTA Section */}
+            {/* Modified Hero CTA */}
             <div className="flex flex-col gap-6 items-center z-50 w-full">
               <div className="flex items-center justify-center gap-4">
-                <Button
+                {/* <Button
                   size="lg"
                   className="rounded-full px-8 py-6 text-lg gap-2 hover:shadow-lg hover:shadow-primary/20 transition-all"
+                  onClick={() => {
+                    document.getElementById("waitlist")?.scrollIntoView({
+                      behavior: "smooth"
+                    });
+                  }}
                 >
-                  {/* <Link href="/auth/sign-in" className="flex items-center">
-                    <span>Start Free Trial</span>
-                    <ArrowRightIcon className="w-5 h-5 ml-2" />
-                  </Link> */}
-                  <div className="flex items-center">
-                    <span>Start Free Trial</span>
-                    <ArrowRightIcon className="w-5 h-5 ml-2" />
-                  </div>
-                </Button>
+                  Join Waitlist
+                  <ArrowRightIcon className="w-5 h-5 ml-2" />
+                </Button> */}
+                <Join />
                 <Button
                   variant="outline"
                   size="lg"
@@ -86,7 +96,7 @@ export default function Home() {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground">
-                No credit card required • GDPR compliant • SOC 2 certified
+                Launching Q1 2025 • Early access available
               </p>
             </div>
           </AnimationContainer>
@@ -164,10 +174,20 @@ export default function Home() {
                 </div> */}
 
                 {/* Coming Soon Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center w-full bg-black">
+                {/* <div className="absolute inset-0 flex items-center justify-center w-full bg-black">
                   <span className="text-white text-4xl md:text-8xl font-bold bg-black/50 px-6 py-3 rounded-lg">
                     Coming Soon
                   </span>
+                </div> */}
+                {/* Updated Dashboard Preview Text */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center w-full bg-black/50 backdrop-blur-sm">
+                  <span className="text-white text-4xl md:text-6xl font-bold mb-4">
+                    Coming Soon
+                  </span>
+                  <Button variant="secondary" className="rounded-full">
+                    Get Early Access
+                    <ArrowRightIcon className="w-4 h-4 ml-2" />
+                  </Button>
                 </div>
               </div>
             </div>
@@ -175,8 +195,30 @@ export default function Home() {
         </div>
       </MaxWidthWrapper>
 
+      {/* Add this right after the Hero section */}
+      <MaxWidthWrapper className="py-16">
+        <AnimationContainer delay={0.3}>
+          <div
+            className="flex flex-col items-center justify-center w-full text-center"
+            id="waitlist"
+          >
+            <MagicBadge title="Early Access" />
+            <h2 className="text-3xl md:text-4xl font-medium font-heading text-foreground mt-6">
+              Join Our Exclusive Waitlist
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-xl">
+              Get priority access, special pricing, and help shape the future of
+              TaskMind AI
+            </p>
+            <div className="w-full mt-8">
+              <WaitlistForm />
+            </div>
+          </div>
+        </AnimationContainer>
+      </MaxWidthWrapper>
+
       {/* Companies Section */}
-      <MaxWidthWrapper>
+      {/* <MaxWidthWrapper>
         <AnimationContainer delay={0.4}>
           <div className="py-14">
             <div className="mx-auto px-4 md:px-8">
@@ -202,7 +244,7 @@ export default function Home() {
             </div>
           </div>
         </AnimationContainer>
-      </MaxWidthWrapper>
+      </MaxWidthWrapper> */}
 
       {/* Features Section */}
       <MaxWidthWrapper className="pt-10">
@@ -311,7 +353,7 @@ export default function Home() {
       </MaxWidthWrapper> */}
 
       {/* Reviews Section */}
-      <MaxWidthWrapper className="py-10">
+      {/* <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
             <MagicBadge title="Our Customers" />
@@ -406,14 +448,14 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </MaxWidthWrapper>
+      </MaxWidthWrapper> */}
 
       {/* CTA Section */}
       <MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
         <AnimationContainer delay={0.1}>
           <LampContainer>
             <div className="flex flex-col items-center justify-center relative w-full text-center">
-              <h2 className="bg-gradient-to-b from-neutral-600 to-neutral-800 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
+              {/* <h2 className="bg-gradient-to-b from-neutral-600 to-neutral-800 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
                 Elevate your productivity with AI-powered task management
               </h2>
               <p className="text-muted-foreground mt-6 max-w-md mx-auto">
@@ -425,6 +467,17 @@ export default function Home() {
                   Get started for free
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Button>
+              </div> */}
+              {/* Modified Final CTA */}
+              <h2 className="bg-gradient-to-b from-neutral-600 to-neutral-800 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
+                Shape the Future of Automation
+              </h2>
+              <p className="text-muted-foreground mt-6 max-w-md mx-auto">
+                Join our waitlist to get early access, exclusive launch pricing,
+                and help shape TaskMind AI's development.
+              </p>
+              <div className="mt-6">
+                <EarlyButton text="Join Waitlist" />
               </div>
             </div>
           </LampContainer>
