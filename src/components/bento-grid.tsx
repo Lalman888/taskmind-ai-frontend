@@ -1,11 +1,11 @@
 import { buttonVariants } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+// import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
-import { ArrowRightIcon, BrainCircuit, Bot, PlugZap, CalendarCheck, Waypoints } from "lucide-react";
+import { ArrowRightIcon, BrainCircuit, Bot, PlugZap, CalendarCheck } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { Input } from "./ui/input";
+// import { Input } from "./ui/input";
 import { Integrations } from "./integrations";
 import { Label } from "./ui/label";
 
@@ -24,7 +24,7 @@ export const CARDS = [
                         Describe Your Workflow
                     </CardTitle>
                     <CardDescription>
-                        "Automate customer follow-ups across email and Slack"
+                        {`"Automate customer follow-ups across email and Slack"`}
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="-mt-4">
@@ -131,6 +131,7 @@ const BentoCard = ({
     name: string;
     className: string;
     background: ReactNode;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Icon: any;
     description: string;
     href: string;

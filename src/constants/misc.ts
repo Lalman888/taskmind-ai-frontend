@@ -1,4 +1,4 @@
-import { BarChart3Icon, BrainCircuit, FolderOpenIcon, Sparkles, WandSparklesIcon } from "lucide-react";
+// import { BarChart3Icon, BrainCircuit, FolderOpenIcon, Sparkl } from "lucide-react";
 
 export const DEFAULT_AVATAR_URL = "https://api.dicebear.com/8.x/initials/svg?backgroundType=gradientLinear&backgroundRotation=0,360&seed=";
 

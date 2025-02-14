@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import { COMPANIES, PROCESS, REVIEWS } from "@/constants/misc";
-import { ArrowRightIcon, Link } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import * as LucideIcons from "lucide-react";
-import PricingCards from "@/components/pricing-cards";
+// import PricingCards from "@/components/pricing-cards";
 import {
   Card,
   CardContent,
@@ -408,28 +408,28 @@ export default function Home() {
         </div>
       </MaxWidthWrapper>
 
-    {/* CTA Section */}
-<MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
-    <AnimationContainer delay={0.1}>
-        <LampContainer>
+      {/* CTA Section */}
+      <MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
+        <AnimationContainer delay={0.1}>
+          <LampContainer>
             <div className="flex flex-col items-center justify-center relative w-full text-center">
-                <h2 className="bg-gradient-to-b from-neutral-600 to-neutral-800 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
-                    Elevate your productivity with AI-powered task management
-                </h2>
-                <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                    Stay organized, automate workflows, and achieve more with TaskMind—your AI-driven assistant for smarter work management.
-                </p>
-                <div className="mt-6">
-                    <Button>
-                        Get started for free
-                        <ArrowRightIcon className="w-4 h-4 ml-2" />
-                    </Button>
-                </div>
+              <h2 className="bg-gradient-to-b from-neutral-600 to-neutral-800 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
+                Elevate your productivity with AI-powered task management
+              </h2>
+              <p className="text-muted-foreground mt-6 max-w-md mx-auto">
+                Stay organized, automate workflows, and achieve more with
+                TaskMind—your AI-driven assistant for smarter work management.
+              </p>
+              <div className="mt-6">
+                <Button>
+                  Get started for free
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
             </div>
-        </LampContainer>
-    </AnimationContainer>
-</MaxWidthWrapper>
-
+          </LampContainer>
+        </AnimationContainer>
+      </MaxWidthWrapper>
     </div>
   );
 }
