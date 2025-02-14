@@ -1,99 +1,222 @@
 import AnimationContainer from "@/components/animation-container";
+import { BentoCard, BentoGrid, CARDS } from "@/components/bento-grid";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
+import MagicBadge from "@/components/ui/magic-badge";
+import { COMPANIES } from "@/constants/misc";
 import { ArrowRightIcon, Link } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <div className="overflow-x-hidden scrollbar-hide size-full">
-        {/* Hero Section */}
-        <MaxWidthWrapper>
-          <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
-            <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
-              
-              {/* AI Tagline */}
-              <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-all duration-200">
-                <span>
-                  <span className="absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-                </span>
-                <span className="absolute inset-[1px] rounded-full bg-neutral-950 transition-all duration-200 group-hover:bg-neutral-900" />
-                <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
-                <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                  🚀 Automate Tasks & Boost Productivity
-                  <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-                </span>
-              </button>
+    <div className="overflow-x-hidden scrollbar-hide">
+      {/* Hero Section */}
+      <MaxWidthWrapper>
+        <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background pb-24">
+          <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
+            {/* Enhanced AI Tagline with Gradient Motion */}
+            <Button
+              variant="ghost"
+              className="group relative mb-8 h-11 rounded-full border border-primary/20 bg-background px-6 shadow-lg transition-all hover:scale-105 hover:border-primary/30"
+            >
+              <div className="absolute inset-0 overflow-hidden rounded-full">
+                <div className="absolute h-full w-full animate-[spin_6s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(199, 147, 255, 0.2)_0%,rgba(124,58,237,0.8)_50%,rgba(199,147,255,0.2)_100%)]" />
+              </div>
+              <span className="relative z-10 flex items-center gap-2 text-sm font-medium text-primary">
+                <span className="animate-pulse">✨</span>
+                Intelligent Automation Platform
+                <ArrowRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </Button>
 
-              {/* Hero Heading */}
-              <h1 className="text-foreground text-center py-6 text-5xl font-bold tracking-normal sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-                AI-Powered Automation for{" "}
-                <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text">
-                  Smarter Workflows
-                </span>
-              </h1>
+            {/* Dynamic Hero Heading */}
+            <h1 className="text-foreground py-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] font-heading">
+              Transform Workflows with
+              <span className="mx-2 bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                Adaptive AI
+              </span>
+            </h1>
 
-              {/* Subheading */}
-              <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl">
-                Taskmind AI streamlines your workflow with intelligent automation.
-                <br className="hidden md:block" />
-                <span className="hidden md:block">
-                  Automate tasks, manage projects, and enhance efficiency with AI.
-                </span>
-              </p>
+            {/* Value Proposition Subheading */}
+            <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl max-w-3xl">
+              TaskMind AI learns and adapts to your unique workflow patterns,
+              offering:
+              <br className="hidden md:block" />
+              <span className="bg-gradient-to-r from-foreground/80 to-foreground/60 bg-clip-text text-transparent">
+                Smart integrations • Context-aware automation • Real-time
+                optimization
+              </span>
+            </p>
 
-              {/* Call to Action */}
-              <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
-                <Button asChild>
-                  <Link
-                    href="/auth/sign-in"
-                    className="flex items-center"
-                  >
-                    Get Started for Free
-                    <ArrowRightIcon className="w-4 h-4 ml-2" />
-                  </Link>
+            {/* Enhanced CTA Section */}
+            <div className="flex flex-col gap-6 items-center z-50 w-full">
+              <div className="flex items-center justify-center gap-4">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 py-6 text-lg gap-2 hover:shadow-lg hover:shadow-primary/20 transition-all"
+                >
+                  {/* <Link href="/auth/sign-in" className="flex items-center">
+                    <span>Start Free Trial</span>
+                    <ArrowRightIcon className="w-5 h-5 ml-2" />
+                  </Link> */}
+                  <div className="flex items-center">
+                    <span>Start Free Trial</span>
+                    <ArrowRightIcon className="w-5 h-5 ml-2" />
+                  </div>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full px-8 py-6 text-lg border-foreground/20 hover:border-foreground/30"
+                >
+                  Watch Demo
                 </Button>
               </div>
-            </AnimationContainer>
+              <p className="text-sm text-muted-foreground">
+                No credit card required • GDPR compliant • SOC 2 certified
+              </p>
+            </div>
+          </AnimationContainer>
 
-            {/* Animated Dashboard Section */}
-            <AnimationContainer
-              delay={0.2}
-              className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full"
-            >
-              <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
-              <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
-                <BorderBeam size={250} duration={12} delay={9} />
+          {/* Interactive Dashboard Preview */}
+          <AnimationContainer
+            delay={0.2}
+            className="relative pt-20 w-full group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 blur-3xl opacity-30 animate-gradient-pan" />
 
-                {/* Blurred Dashboard with "Coming Soon" */}
-                <div className="relative w-full">
-                  <Image
-                    src="/dashboard-dark.svg"
-                    alt="Dashboard"
-                    width={1200}
-                    height={1200}
-                    quality={100}
-                    className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border blur-none"
-                  />
-                  
+            <div className="relative -m-2 rounded-2xl p-2 ring-1 ring-inset ring-foreground/10 bg-background/80 backdrop-blur-2xl shadow-2xl">
+              <BorderBeam
+                size={300}
+                duration={15}
+                delay={10}
+                colorFrom="#8b5cf6"
+                colorTo="#d946ef"
+              />
+
+              {/* Animated Platform Integrations */}
+              <div className="absolute -top-6 inset-x-0 flex justify-center gap-4 z-50">
+                {["slack", "salesforce", "gmail", "whatsapp"].map(
+                  (platform) => (
+                    <div
+                      key={platform}
+                      className="flex items-center justify-center p-2 bg-background rounded-full border border-foreground/10 shadow-sm hover:shadow-md transition-all"
+                    >
+                      <Image
+                        src={`/integrations/${platform}.svg`}
+                        alt={platform}
+                        width={32}
+                        height={32}
+                        className="size-6 md:size-8 opacity-80 hover:opacity-100 transition-opacity"
+                      />
+                    </div>
+                  )
+                )}
+              </div>
+
+              {/* Interactive Dashboard Preview */}
+              <div className="relative overflow-hidden rounded-xl border border-foreground/5 bg-gradient-to-b from-background to-foreground/5">
+                <Image
+                  src="/dashboard-dark.svg"
+                  alt="AI Automation Dashboard"
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                  className="w-full h-auto scale-[1.01]"
+                />
+
+                {/* Hover-overlay with AI Features */}
+                {/* <div className="absolute inset-0 bg-black flex items-end p-6 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <div className="grid grid-cols-3 gap-4 w-full">
+                    {["Auto-workflow", "Smart Analytics", "Live AI"].map(
+                      (feature) => (
+                        <div
+                          key={feature}
+                          className="p-4 bg-background/90 rounded-lg border border-foreground/10 backdrop-blur-sm"
+                        >
+                          <h3 className="text-sm font-semibold text-primary">
+                            {feature}
+                          </h3>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            {feature === "Auto-workflow"
+                              ? "Context-aware task routing"
+                              : feature === "Smart Analytics"
+                              ? "Real-time performance insights"
+                              : "Active AI optimization"}
+                          </p>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div> */}
+
                   {/* Coming Soon Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center w-full bg-black">
                     <span className="text-white text-4xl md:text-8xl font-bold bg-black/50 px-6 py-3 rounded-lg">
                       Coming Soon
                     </span>
                   </div>
-                </div>
-
-                {/* Background Gradients */}
-                <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40"></div>
-                <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50"></div>
               </div>
-            </AnimationContainer>
+            </div>
+          </AnimationContainer>
+        </div>
+      </MaxWidthWrapper>
+
+      {/* Companies Section */}
+      <MaxWidthWrapper>
+        <AnimationContainer delay={0.4}>
+          <div className="py-14">
+            <div className="mx-auto px-4 md:px-8">
+              <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
+                Trusted by the best in the industry
+              </h2>
+              <div className="mt-8">
+                <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
+                  {COMPANIES.map((company) => (
+                    <li key={company.name}>
+                      <Image
+                        src={company.logo}
+                        alt={company.name}
+                        width={80}
+                        height={80}
+                        quality={100}
+                        className="w-28 h-auto"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </MaxWidthWrapper>
-      </div>
+        </AnimationContainer>
+      </MaxWidthWrapper>
+
+      {/* Features Section */}
+      <MaxWidthWrapper className="pt-10">
+        <AnimationContainer delay={0.1}>
+          <div className="flex flex-col w-full items-center lg:items-center justify-center py-8">
+            <MagicBadge title="Features" />
+            <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
+              Automate Workflows with AI Precision
+            </h2>
+            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-3xl">
+              TaskMind AI revolutionizes business automation through intelligent
+              process orchestration -
+              <br className="hidden md:block" />
+              seamlessly connecting apps, predicting tasks, and optimizing
+              workflows in real-time.
+            </p>
+          </div>
+        </AnimationContainer>
+        <AnimationContainer delay={0.2}>
+          <BentoGrid className="py-8">
+            {CARDS.map((feature, idx) => (
+              <BentoCard key={idx} {...feature} />
+            ))}
+          </BentoGrid>
+        </AnimationContainer>
+      </MaxWidthWrapper>
     </div>
   );
 }
