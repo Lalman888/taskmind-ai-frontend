@@ -2,23 +2,23 @@
 
 import { buttonVariants } from "@/components/ui/button";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
+  // NavigationMenu,
+  // NavigationMenuContent,
+  // NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+  // NavigationMenuList,
+  // NavigationMenuTrigger,
+  // navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-import { LucideIcon, ZapIcon } from "lucide-react";
+import { ArrowRightIcon, LucideIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import MaxWidthWrapper from "../max-width-wrapper";
 import MobileNavbar from "./mobile-navbar";
 import AnimationContainer from "../animation-container";
-import { NAV_LINKS } from "@/constants/nav-links";
+// import { NAV_LINKS } from "@/constants/nav-links";
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <NavigationMenu className="hidden lg:flex">
+            {/* <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList>
                 {NAV_LINKS.map((link) => (
                   <NavigationMenuItem key={link.title}>
@@ -99,7 +99,7 @@ const Navbar = () => {
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
-            </NavigationMenu>
+            </NavigationMenu> */}
           </div>
 
           {/* Right-Side Buttons */}
@@ -110,20 +110,26 @@ const Navbar = () => {
               </Link>
             ) : (
               <div className="flex items-center gap-x-4">
-                <Link
-                  href="/auth/login"
-                  className={buttonVariants({ size: "sm", variant: "ghost" })}
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/auth/sign-up"
-                  className={buttonVariants({ size: "sm", className: "bg-primary text-white flex items-center" })}
-                >
-                  Get Started
-                  <ZapIcon className="size-4 ml-1.5 text-orange-500" />
-                </Link>
-              </div>
+              {/* Temporarily commented for launch phase
+              <Link
+                href="/auth/login"
+                className={buttonVariants({ size: "sm", variant: "ghost" })}
+              >
+                Login
+              </Link>
+              */}
+              
+              <Link
+                href="#waitlist"  // Link to your waitlist section
+                className={buttonVariants({ 
+                  size: "sm", 
+                  className: "bg-primary text-white flex items-center hover:bg-primary/90 transition-colors"
+                })}
+              >
+                Get Early Access
+                <ArrowRightIcon className="size-4 ml-1.5 text-orange-500" />
+              </Link>
+            </div>
             )}
           </div>
 

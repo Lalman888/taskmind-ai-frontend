@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icons } from "../icons";
-import { TextHoverEffect } from "../text-hover-effect";
+// import { TextHoverEffect } from "../text-hover-effect";
 import AnimationContainer from "../animation-container";
 
 const Footer = () => {
@@ -15,8 +15,8 @@ const Footer = () => {
               <Icons.logo className="w-7 h-7" />
             </div>
             <p className="text-muted-foreground mt-4 text-sm text-start">
-              TaskMind AI – Your intelligent assistant for productivity,
-              automation, and seamless business operations.
+              TaskMind AI – Next-gen intelligent automation platform launching soon.
+              Join waitlist for early access and exclusive benefits.
             </p>
           </div>
         </AnimationContainer>
@@ -27,25 +27,25 @@ const Footer = () => {
               <div>
                 <h3 className="text-base font-medium text-white">Platform</h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
-                  <li className="mt-2">
+                  {/* <li className="mt-2">
                     <Link
                       href="/features"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Features
                     </Link>
-                  </li>
-                  <li className="mt-2">
+                  </li> */}
+                  {/* <li className="mt-2">
                     <Link
                       href="/pricing"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Pricing
                     </Link>
-                  </li>
+                  </li> */}
                   <li className="mt-2">
                     <Link
-                      href="/use-cases"
+                      href="#"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Use Cases
@@ -53,10 +53,10 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/demo"
+                      href="#waitlist"
                       className="hover:text-foreground transition-all duration-300"
                     >
-                      Request a Demo
+                      Early Access
                     </Link>
                   </li>
                 </ul>
@@ -69,38 +69,28 @@ const Footer = () => {
                   Integrations
                 </h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
-                  <li className="mt-2">
+                  {/* <li className="mt-2">
                     <Link
-                      href="/integrations/whatsapp"
+                      href="#waitlist"
                       className="hover:text-foreground transition-all duration-300"
                     >
-                      WhatsApp
+                      Coming Soon
                     </Link>
+                  </li> */}
+                  {/* Commented out specific integrations for launch */}
+                  <li className="mt-2">
+                    <Link href="#">WhatsApp</Link>
                   </li>
                   <li className="mt-2">
-                    <Link
-                      href="/integrations/linkedin"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      LinkedIn
-                    </Link>
+                    <Link href="#">LinkedIn</Link>
                   </li>
+                  {/* <li className="mt-2">
+                    <Link href="/integrations/gmail">Gmail</Link>
+                  </li> */}
                   <li className="mt-2">
-                    <Link
-                      href="/integrations/gmail"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Gmail
-                    </Link>
+                    <Link href="#">Telegram</Link>
                   </li>
-                  <li className="mt-2">
-                    <Link
-                      href="/integrations/telegram"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Telegram
-                    </Link>
-                  </li>
+                 
                 </ul>
               </div>
             </AnimationContainer>
@@ -112,28 +102,18 @@ const Footer = () => {
                 <h3 className="text-base font-medium text-white">Resources</h3>
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
-                    <Link
-                      href="/blog"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Blog
-                    </Link>
+                    <Link href="#">Blog</Link>
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/support"
+                      href="mailto:support@taskmind.ai"
                       className="hover:text-foreground transition-all duration-300"
                     >
-                      Support
+                      Contact Support
                     </Link>
                   </li>
                   <li className="mt-2">
-                    <Link
-                      href="/docs"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Documentation
-                    </Link>
+                    <Link href="#">Documentation</Link>
                   </li>
                 </ul>
               </div>
@@ -145,35 +125,25 @@ const Footer = () => {
                 <ul className="mt-4 text-sm text-muted-foreground">
                   <li className="mt-2">
                     <Link
-                      href="/about"
+                      href="#"
                       className="hover:text-foreground transition-all duration-300"
                     >
-                      About Us
+                      About
+                    </Link>
+                  </li>
+                  {/* <li className="mt-2">
+                    <Link href="/careers">Careers</Link>
+                  </li> */}
+                  <li className="mt-2">
+                    <Link
+                      href="#"
+                      className="hover:text-foreground transition-all duration-300"
+                    >
+                      Privacy
                     </Link>
                   </li>
                   <li className="mt-2">
-                    <Link
-                      href="/careers"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Careers
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href="/privacy-policy"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li className="mt-2">
-                    <Link
-                      href="/terms"
-                      className="hover:text-foreground transition-all duration-300"
-                    >
-                      Terms & Conditions
-                    </Link>
+                    <Link href="#">Terms</Link>
                   </li>
                 </ul>
               </div>
@@ -190,9 +160,11 @@ const Footer = () => {
         </AnimationContainer>
       </div>
 
+      {/* Temporary removal of decorative element
       <div className="h-[20rem] lg:h-[20rem] hidden md:flex items-center justify-center">
         <TextHoverEffect text="TaskMind AI" />
       </div>
+      */}
     </footer>
   );
 };
