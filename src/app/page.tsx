@@ -473,8 +473,8 @@ export default function Home() {
                 Shape the Future of Automation
               </h2>
               <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                Join our waitlist to get early access, exclusive launch pricing,
-                and help shape TaskMind AI's development.
+              {`  Join our waitlist to get early access, exclusive launch pricing,
+                and help shape TaskMind AI's development. `}
               </p>
               <div className="mt-6">
                 <EarlyButton text="Join Waitlist" />

@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { BorderBeam } from "@/components/ui/border-beam";
-import { cn } from "@/lib/utils";
+// import { BorderBeam } from "@/components/ui/border-beam";
+// import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
 import { useState } from "react";
 
@@ -105,10 +105,10 @@ export function WaitlistForm() {
         ) : (
           <div className="text-center space-y-4">
             <h3 className="text-2xl font-bold text-foreground">
-              🎉 You're on the list!
+             {` 🎉 You're on the list! `}
             </h3>
             <p className="text-muted-foreground">
-              We'll send you early access details soon
+            {`  We'll send you early access details soon `}
             </p>
           </div>
         )}
